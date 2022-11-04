@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class TipoPessoa {
     private int id;
     private String valor;
@@ -24,5 +26,17 @@ public class TipoPessoa {
 
     public void setValor(String valor) {
         this.valor = valor;
+    }
+
+    public void cadastraTipoPessoa(Scanner ler)
+    {
+        System.out.print("Tipo Pessoa\n");
+        System.out.print("Informe o ID do Tipo Pessao: ");
+        id = ler.nextInt();
+        ler.nextLine();
+
+        System.out.print("Informe o Tipo Pessoa: ");
+        valor = ler.nextLine();
+
     }
 }

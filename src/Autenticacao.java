@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Autenticacao {
     private int id;
     private String email;
@@ -34,5 +36,38 @@ public class Autenticacao {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public void cadastraAutenticacao(Scanner ler)
+    {
+        System.out.print("Autenticacao\n");
+        System.out.print("Informe o ID da Autenticacao: ");
+        id = ler.nextInt();
+        ler.nextLine();
+
+        System.out.print("Informe o Email: ");
+        email = ler.nextLine();
+
+        System.out.print("Informe a senha: ");
+        senha = ler.nextLine();
+    }
+
+    public boolean validarLogin(String email, String senha)
+    {
+        if (this.email.equals(email) && this.senha.equals(senha))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean verificarEmail(String email)
+    {
+        if (this.email.equals(email))
+        {
+            return true;
+        }
+
+        return false;
     }
 }

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Endereco {
     private int id;
     private String rua;
@@ -64,5 +66,28 @@ public class Endereco {
 
     public void setPais(String pais) {
         this.pais = pais;
+    }
+
+    public void cadastraEndereco(Scanner ler)
+    {
+        System.out.print("Endereco\n");
+        System.out.print("Informe o ID da Endereco: ");
+        id = ler.nextInt();
+        ler.nextLine();
+
+        System.out.print("Informe a rua: ");
+        rua = ler.nextLine();
+
+        System.out.print("Informe a cidade: ");
+        cidade = ler.nextLine();
+
+        System.out.print("Informe a estado: ");
+        estado = ler.nextLine();
+
+        System.out.print("Informe a codigo postal: ");
+        codigoPostal = ler.nextLine();
+
+        System.out.print("Informe a pais: ");
+        pais = ler.nextLine();
     }
 }

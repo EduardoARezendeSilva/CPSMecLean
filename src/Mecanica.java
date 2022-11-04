@@ -1,6 +1,8 @@
+import java.util.Scanner;
+
 public class Mecanica {
     private int id;
-    private Pessoa pessoa = new Pessoa();
+    public Pessoa pessoa = new Pessoa();
 
     public Mecanica() {
     }
@@ -24,5 +26,15 @@ public class Mecanica {
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+
+    public void CadastraMecanica(Scanner ler)
+    {
+        System.out.print("Mecanica\n");
+        System.out.print("Informe o ID da Mecanica: ");
+        id = ler.nextInt();
+        ler.nextLine();
+
+        pessoa.cadastraPessoa(ler);
     }
 }

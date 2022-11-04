@@ -1,13 +1,15 @@
+import java.util.Scanner;
+
 public class Pessoa {
     private int id;
-    private Autenticacao autenticacao = new Autenticacao();
+    public Autenticacao autenticacao = new Autenticacao();
     private String nome;
     private int telefone;
     private String documento;
-    private Endereco endereco = new Endereco();
+    public Endereco endereco = new Endereco();
     private String urlImagem;
 
-    private TipoPessoa tipoPessoa = new TipoPessoa();
+    public TipoPessoa tipoPessoa = new TipoPessoa();
 
     public Pessoa() {
     }
@@ -85,5 +87,27 @@ public class Pessoa {
 
     public void setTipoPessoa(TipoPessoa tipoPessoa) {
         this.tipoPessoa = tipoPessoa;
+    }
+
+    public void cadastraPessoa(Scanner ler)
+    {
+        System.out.print("Pessoa\n");
+        System.out.print("Informe o ID da Pessoa: ");
+        id = ler.nextInt();
+        ler.nextLine();
+
+        System.out.print("Informe o nome: ");
+        nome = ler.nextLine();
+
+        System.out.print("Informe o telefone: ");
+        telefone = ler.nextInt();
+        ler.nextLine();
+
+        System.out.print("Informe a url da imagem: ");
+        urlImagem = ler.nextLine();
+
+        endereco.cadastraEndereco(ler);
+
+        tipoPessoa.cadastraTipoPessoa(ler);
     }
 }
